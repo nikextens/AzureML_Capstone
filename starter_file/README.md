@@ -13,7 +13,7 @@ Features in the data set include the type of wine (either red or white wine) and
 I use the quality as the target label that needs to be classified by the ML engine.
 
 ### Access
-I uploaded the data in a google [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0_ymTF3299kfZvr0KJq5JMLX7ZK4yRg9RXYTqEsMqm2eeUrABv_4MVQMzrqfw1CsbmcrnTqIluMA0/pub?output=csv) and access them via pandas (read_csv method).
+I uploaded the data in a google [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0_ymTF3299kfZvr0KJq5JMLX7ZK4yRg9RXYTqEsMqm2eeUrABv_4MVQMzrqfw1CsbmcrnTqIluMA0/pub?output=csv) and access them via pandas (`read_csv method`).
 
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
