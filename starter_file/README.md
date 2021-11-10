@@ -16,6 +16,25 @@ I use the quality as the target label that needs to be classified by the ML engi
 I uploaded the data in a google [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0_ymTF3299kfZvr0KJq5JMLX7ZK4yRg9RXYTqEsMqm2eeUrABv_4MVQMzrqfw1CsbmcrnTqIluMA0/pub?output=csv) and access them via pandas (`read_csv method`).
 
 ## Automated ML
+In a first step, I applied AutoML provided by AzureML to find the best model for my classification task. There, I used the following settings for the engine:
+`automl_settings = {
+       "n_cross_validations": 5,
+       "primary_metric": 'AUC_weighted',
+       "enable_early_stopping": True,
+       "experiment_timeout_hours": 1.0,
+       "max_concurrent_iterations": 4,
+       "verbosity": logging.INFO,
+   }
+
+automl_config = AutoMLConfig(
+    compute_target = compute_target,
+    task='classification',
+    training_data=ds,
+    label_column_name='quality',
+    **automl_settings)`
+
+Parameters were chosen
+
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
 
 ### Results
