@@ -36,6 +36,11 @@ automl_config = AutoMLConfig(
 Parameters were chosen based on previous experiments/analysis and default settings.
 
 ### Results
+As shown in the figure below, the experiment took 25 minutes and completed successfully. 
+![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/automl_experiment_done.PNG)
+
+
+
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
