@@ -55,13 +55,7 @@ As shown in the jupyter notebook and also screencast, the most performant model 
 
 Before model selection, AutoML gave an alert in the class balancing detection.
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/automl_alerting.PNG)
-To fix the balancing problem and also improve the model's results, I would combine features (e.g., through cluster) in the next iteration/run to increase class' sizes.
-
-
-
-*TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
-
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+To fix the balancing problem and also improve the model's results, I would combine features (e.g., through clustering algorithms) in the next iteration/run to increase class' sizes.
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
