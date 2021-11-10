@@ -17,7 +17,7 @@ I uploaded the data in a google [spreadsheet](https://docs.google.com/spreadshee
 
 ## Automated ML
 In a first step, I applied AutoML provided by AzureML to find the best model for my classification task. There, I used the following settings for the engine:
-`automl_settings = {
+```automl_settings = {
        "n_cross_validations": 5,
        "primary_metric": 'AUC_weighted',
        "enable_early_stopping": True,
@@ -31,7 +31,7 @@ automl_config = AutoMLConfig(
     task='classification',
     training_data=ds,
     label_column_name='quality',
-    **automl_settings)`
+    **automl_settings)```
 
 Parameters were chosen
 
