@@ -24,8 +24,7 @@ automl_settings = {
        "enable_early_stopping": True,
        "experiment_timeout_hours": 1.0,
        "max_concurrent_iterations": 4,
-       "verbosity": logging.INFO,
-   }
+       "verbosity": logging.INFO}
 
 automl_config = AutoMLConfig(
     compute_target = compute_target,
@@ -34,10 +33,7 @@ automl_config = AutoMLConfig(
     label_column_name='quality',
     **automl_settings)
 ```
-
-Parameters were chosen
-
-*TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
+Parameters were chosen based on previous experiments/analysis and default settings.
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
