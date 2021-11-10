@@ -39,7 +39,24 @@ Parameters were chosen based on previous experiments/analysis and default settin
 As shown in the figure below, the experiment took 25 minutes and completed successfully. 
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/automl_experiment_done.PNG)
 
+AUC (weighted) as the primary metric reached an accuracy of 86.7%. Further metrics are shown below: 
+![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/automl_result1.PNG)
 
+For the sake of completeness, I also exported some of the main characteristics/results:
+![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/automl_result2.PNG)
+![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/automl_confusion_matrix.PNG)
+
+The AutoML engine assessed 37 models and the last one brought an increase to the weighted AUC.
+![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/automl_model_comparison.PNG)
+
+As shown in the jupyter notebook and also screencast, the most performant model was a Stack Ensemble than completed after only 37 seconds. In the following, I exported the best model. For further information (also on the best estimator), I kindly refer to the notebook output and/or the screencast.
+```
+Best model:  Pipeline(memory=None,
+         steps=[('datatransformer',
+                 DataTransformer(enable_dnn=False, enable_feature_sweeping=True, feature_sweeping_config={}, feature_sweeping_timeout=86400, featurization_config=None, force_text_dnn=False, is_cross_validation=True, is_onnx_compatible=False, observer=None, task='classification', working_dir='/mnt/batch/tasks/shared/LS_root/mount...
+)), ('logisticregression', LogisticRegression(C=2222.996482526191, class_weight=None, dual=False, fit_intercept=True, intercept_scaling=1, l1_ratio=None, max_iter=100, multi_class='multinomial', n_jobs=1, penalty='l2', random_state=None, solver='lbfgs', tol=0.0001, verbose=0, warm_start=False))], verbose=False))], meta_learner=LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True, intercept_scaling=1, l1_ratio=None, max_iter=100, multi_class='auto', n_jobs=None, penalty='l2', random_state=None, solver='lbfgs', tol=0.0001, verbose=0, warm_start=False), training_cv_folds=5))],
+         verbose=False)
+```
 
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
