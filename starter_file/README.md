@@ -32,7 +32,8 @@ automl_config = AutoMLConfig(
     task='classification',
     training_data=ds,
     label_column_name='quality',
-    **automl_settings)```
+    **automl_settings)
+```
 
 Parameters were chosen
 
