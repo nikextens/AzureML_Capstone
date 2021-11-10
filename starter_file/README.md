@@ -50,13 +50,13 @@ The AutoML engine assessed 37 models and the last one brought an increase to the
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/automl_model_comparison.PNG)
 
 As shown in the jupyter notebook and also screencast, the most performant model was a Stack Ensemble than completed after only 37 seconds. In the following, I exported the best model. For further information (also on the best estimator), I kindly refer to the notebook output and/or the screencast.
-```
-Best model:  Pipeline(memory=None,
-         steps=[('datatransformer',
-                 DataTransformer(enable_dnn=False, enable_feature_sweeping=True, feature_sweeping_config={}, feature_sweeping_timeout=86400, featurization_config=None, force_text_dnn=False, is_cross_validation=True, is_onnx_compatible=False, observer=None, task='classification', working_dir='/mnt/batch/tasks/shared/LS_root/mount...
-)), ('logisticregression', LogisticRegression(C=2222.996482526191, class_weight=None, dual=False, fit_intercept=True, intercept_scaling=1, l1_ratio=None, max_iter=100, multi_class='multinomial', n_jobs=1, penalty='l2', random_state=None, solver='lbfgs', tol=0.0001, verbose=0, warm_start=False))], verbose=False))], meta_learner=LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True, intercept_scaling=1, l1_ratio=None, max_iter=100, multi_class='auto', n_jobs=None, penalty='l2', random_state=None, solver='lbfgs', tol=0.0001, verbose=0, warm_start=False), training_cv_folds=5))],
-         verbose=False)
-```
+![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/automl_bestmodel.PNG)
+
+Before model selection, AutoML gave an alert in the class balancing detection.
+![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/automl_alerting.PNG)
+To fix the balancing problem and also improve the model's results, I would combine features (e.g., through cluster) in the next iteration/run to increase class' sizes.
+
+
 
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
