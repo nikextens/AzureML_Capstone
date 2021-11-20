@@ -64,13 +64,13 @@ early_termination_policy = BanditPolicy(slack_factor = 0.1, evaluation_interval=
 
 param_sampling = RandomParameterSampling({'--max_iter':20})
 ```
-Parameters were chosen based on previous projects (e.g., Project 1 of the nanodegree) and past experience and default settings.
+Parameters were chosen based on previous projects (e.g., Project 1 of the nanodegree) and past experience / default settings.
 
 ### Results
 The hyperparameter tuning completed successfully after only 4 minutes.
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/hypertune_completed_run.PNG)
 
-As shown below, it only reached an accuracy of 54.77%.
+As shown below, it only reached an accuracy of 54.77%, which is very low compared to our AutoML model.
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/hypertune_runwidget.PNG)
 
 Best metrics and hyperparameters are here:
