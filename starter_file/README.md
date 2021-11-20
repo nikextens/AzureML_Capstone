@@ -59,7 +59,13 @@ To fix the balancing problem and also improve the model's results, I would combi
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+For that experiment, I chose a logistic regression that is a simple (and easy-to-understand) but also power method. For the hyperparameter search, I used the following parameters for sampling and termination:
+```
+early_termination_policy = BanditPolicy(slack_factor = 0.1, evaluation_interval=2, delay_evaluation=5)
 
+param_sampling = RandomParameterSampling({'--max_iter':20})
+```
+Parameters were chosen based on previous projects (e.g., Project 1 of the nanodegree) and past experience and default settings.
 
 ### Results
 *TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
