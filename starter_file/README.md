@@ -91,9 +91,8 @@ When comparing the accuracy with the AutoML model, it becomes obvious that the h
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 
 ## Screen Recording
+Following the project's structure with two scripts classifying our wine data, I created one [screencast](https://www.youtube.com/watch?v=WEOxwvgcBFQ) to document the AutoML part and an additional [clip](https://www.youtube.com/watch?v=bvrs2v0F9mA) for the hypertuning option.
 
-https://www.youtube.com/watch?v=WEOxwvgcBFQ
-https://www.youtube.com/watch?v=bvrs2v0F9mA
 
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
 - A working model
