@@ -58,8 +58,7 @@ Before model selection, AutoML gave an alert in the class balancing detection.
 To fix the balancing problem and also improve the model's results, I would combine features (e.g., through clustering algorithms) in the next iteration/run to increase class' sizes.
 
 ## Hyperparameter Tuning
-*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
-For that experiment, I chose a logistic regression that is a simple (and easy-to-understand) but also power method. For the hyperparameter search, I used the following parameters for sampling and termination:
+For that experiment, I pre-selected a logistic regression that is a simple (and easy-to-understand) but also a powerful method when it comes to classification problems. For the hyperparameter tuning, I used the following parameters for sampling and termination:
 ```
 early_termination_policy = BanditPolicy(slack_factor = 0.1, evaluation_interval=2, delay_evaluation=5)
 
@@ -68,6 +67,11 @@ param_sampling = RandomParameterSampling({'--max_iter':20})
 Parameters were chosen based on previous projects (e.g., Project 1 of the nanodegree) and past experience and default settings.
 
 ### Results
+The hyperparameter tuning completed successfully after only 4 minutes.
+![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/hypertune_completed_run.PNG)
+
+As shown below, it only reached an accuracy of 54.77%.
+
 *TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
