@@ -88,6 +88,9 @@ When comparing the accuracy with the AutoML model, it becomes obvious that the h
 
 
 ## Model Deployment
+I had problems to deploy the model via SDK and so far I could not figure out what went wrong. As you will see in my notebook, I created my deployment config and inference config. Due to unknown reasons, it keeps throwing error messages that my Pipeline object has no attribute id although I am not setting up any pipelines. Any support/help would be appreciated.
+![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/error_message_deployment.PNG)
+
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 
 ## Screen Recording
