@@ -75,7 +75,7 @@ param_sampling = RandomParameterSampling({'--max_iter':20})
 ```
 Parameter Sampler: I chose the Random Sampling as the parameter sampling method, i.e., hyperparameters are randomly selected from the search space. One of its benefits is that it the method also supports early termination of low-performance runs. Besides that it is simple and comes with a lack of bias. ML scientists often tend to work with favorite methods and hypertune parameters. By using Random Sampling, the method starts with a rather balanced 'random' view.
 
-Stopping policy: In that project, I chose the Bandit policy that is based on slack factor/slack amount and evaluation interval. In other words, the policy terminates the run when the primary metric breaches the slack of the most successfull run. Again, the method is rather simple and very efficient in those solution spaces.
+Stopping policy: In that project, I chose the Bandit policy that is based on slack factor/slack amount and evaluation interval. In other words, the policy terminates the run when the primary metric breaches the slack of the most successfull run. Again, the method is rather simple and very efficient in those solution spaces. The underlying specification of the policy comes from an example provided by Microsoft (see [link](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters) for details). In that example, the early termination policy is applied at every interval when metrics are reported, starting at evaluation interval 5. Any run whose best metric is less than (1/(1+0.1) or 91% of the best performing run will be terminated.
 
 ### Results
 The hyperparameter tuning completed successfully after only 4 minutes.
