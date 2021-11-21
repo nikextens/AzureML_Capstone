@@ -165,6 +165,8 @@ For the sake of completeness, I also checked the endpoint test within the studio
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/deployment_test.PNG)
 For that random observation, the predicted quality would be 5. Please note that the underlying data do not make any sense and I only included that step for validation reasons.
 
+To put it in a nutshell, deployment was successful and the model could be used via SDK as well as in AzureML studio.
+
 ## Screen Recording
 Following the project's structure with two scripts classifying our wine data, I created a [screencast](https://www.youtube.com/watch?v=pVbl0bvTrsM) showing the configuration and application of AutoML, afterwards my hypertuned pre-selected model and, eventually, the deployment of the best model.
 
