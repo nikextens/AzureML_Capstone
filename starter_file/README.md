@@ -69,7 +69,7 @@ To fix the balancing problem and also improve the model's results, I would combi
 ## Hyperparameter Tuning
 For that experiment, I pre-selected a logistic regression that is a simple (and easy-to-understand) but also a powerful method when it comes to classification problems. For the hyperparameter tuning, I used the following parameters for sampling and termination:
 ```
-early_termination_policy = BanditPolicy(slack_factor = 0.1, evaluation_interval=2, delay_evaluation=5)
+early_termination_policy = BanditPolicy(slack_factor = 0.1, evaluation_interval=1, delay_evaluation=5)
 
 param_sampling = RandomParameterSampling({'--max_iter':20})
 ```
