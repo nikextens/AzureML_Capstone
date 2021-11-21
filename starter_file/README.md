@@ -94,7 +94,43 @@ The following figure shows the successful deployment of the model (in SDK as wel
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/deployment_healthy.PNG)
 Both figures also show that the service is healthy and the model can be used.
 
-In a next step, I used to two illustrative data sets to test the model endpoint. The endpoint reacted and gave two predictions back:
+In a next step, I used to two illustrative data sets to test the model endpoint. 
+```
+data = {"data":
+        [
+          {
+            "type": "red",
+            "fixed acidity": 7,
+            "volatile acidity": 0.27,
+            "citric acid": 0.36,
+            "residual sugar": 20.7,
+            "chlorides": 0.045,
+            "free sulfur dioxide": 45,
+            "total sulfur dioxide": 170,
+            "desnsity": 1.001,
+            "pH": 3,
+            "sulphates": 0.45,
+            "alcohol": 8.8,
+          },
+          {
+            "type": "white",
+            "fixed acidity": 7,
+            "volatile acidity": 0.27,
+            "citric acid": 0.36,
+            "residual sugar": 20.7,
+            "chlorides": 0.045,
+            "free sulfur dioxide": 45,
+            "total sulfur dioxide": 170,
+            "desnsity": 1.001,
+            "pH": 3,
+            "sulphates": 0.45,
+            "alcohol": 8.8,
+          },
+      ]
+    }
+```
+
+The endpoint reacted and gave two predictions back:
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/deployment_endpoint_test.PNG)
 
 I also checked the endpoint test within the studio:
