@@ -159,7 +159,7 @@ resp = requests.post(scoring_uri, input_data, headers=headers)
 
 The endpoint reacted and gave two predictions back:
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/deployment_endpoint_test.PNG)
-As shown, the model classified both sample data with a quality of 6. The only difference between both observations was the type of wine (red vs. white wine). Ceteris paribus, the wine type itself, thus, does not change the rating of the respective wine.
+As shown, the model classified both sample data with a quality of 6; the response is given via the json `resp.json`. The only difference between both observations was the type of wine (red vs. white wine). Ceteris paribus, the wine type itself, thus, does not change the rating of the respective wine.
 
 For the sake of completeness, I also checked the endpoint test within the studio itself:
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/deployment_test.PNG)
