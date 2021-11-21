@@ -16,7 +16,7 @@ I use the quality as the target label that needs to be classified by the ML engi
 I uploaded the data in a google [spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0_ymTF3299kfZvr0KJq5JMLX7ZK4yRg9RXYTqEsMqm2eeUrABv_4MVQMzrqfw1CsbmcrnTqIluMA0/pub?output=csv) and access them via pandas (`read_csv method`).
 
 ## Automated ML
-In a first step, I applied AutoML provided by AzureML to find the best model for my classification task. There, I used the following settings for the engine:
+In a first step, I applied AutoML provided by AzureML to find the best model for my task. There, I used the following settings for the engine:
 ```
 automl_settings = {
        "n_cross_validations": 5,
@@ -33,7 +33,11 @@ automl_config = AutoMLConfig(
     label_column_name='quality',
     **automl_settings)
 ```
-Parameters were chosen based on previous experiments/analysis and default settings.
+As introduced above, we would like to classify the wine's quality. We, thus, specify the AutoML task as a `classification` problem with the "quality" column as the respective label to predict. Our Kaggle dataset obviously served as the training data set (here: `ds`). The specification of the `compute_target` completes the configuration.
+
+Additionally, I also specified the settings for the AutoML experiment. As the main configuration, I decided to use the weighted Area-Under-the-Curve (i.e., arithmetic mean of the score for each class, weighted by the number of true instances in each class) that is optimized. One of the advantages (and also arguments pro AUC) is its capability to deal with data sets that might have a skewed sample distribution. It then prevents an overfitting towards single classes. For those kind of classification tasks, `AUC_weighted` is often the default setting to start with.
+
+Parameters were chosen based on previous experiments/analysis and default settings. 
 
 ### Results
 As shown in the figure below, the experiment took 25 minutes and completed successfully. 
