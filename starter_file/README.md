@@ -37,7 +37,12 @@ As introduced above, we would like to classify the wine's quality. We, thus, spe
 
 Additionally, I also specified the settings for the AutoML experiment. As the main configuration, I decided to use the weighted Area-Under-the-Curve (i.e., arithmetic mean of the score for each class, weighted by the number of true instances in each class) that is optimized. One of the advantages (and also arguments pro AUC) is its capability to deal with data sets that might have a skewed sample distribution. It then prevents an overfitting towards single classes. For those kind of classification tasks, `AUC_weighted` is often the default setting to start with.
 
-Parameters were chosen based on previous experiments/analysis and default settings. 
+Furthermore, I set the number of cross validations (i.e., the number of validations to perform when user validation data is not specified) to 5. `n_cross_validations` also depends on the size of the dataset meaning the number of observations. Given the size of our data set with around 6,500 samples, five cross validations seemed as a good trade-off between runtime and accuracy.
+
+Against the same background, I enabled the early stopping criterium. The logic applies when the score is not improving anymore while still preventing early stopping (default setting is also True). Since my maximum lab duration was limited, I started with enabling the `enable_early_stopping`. For the same reasons, I also provided an `experiment_timeout_hours` of one hour.
+
+Since I used a compute target with more than one node, I could also increase the `max_concurrent_iterations` from 1 to 4.
+
 
 ### Results
 As shown in the figure below, the experiment took 25 minutes and completed successfully. 
