@@ -88,8 +88,16 @@ When comparing the accuracy with the AutoML model, it becomes obvious that the h
 
 
 ## Model Deployment
-I had problems to deploy the model via SDK and so far I could not figure out what went wrong. As you will see in my notebook, I created my deployment config and inference config. Due to unknown reasons, it keeps throwing error messages that my Pipeline object has no attribute id although I am not setting up any pipelines. Any support/help would be appreciated.
-![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/error_message_deployment.PNG)
+Afterwards, I deployed the AutoML model that outperformed the other one via ACIWebservice. There, I also enabled app insights so that I could easily generate key to also query the model. 
+
+The following figure shows the successful deployment of the model (in SDK as well as in the endpoint section of the studio).
+![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/deployment_sdk.PNG)
+![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/deployment_healthy.PNG)
+Both figures also show that the service is healthy and the model can be used.
+
+In a next step, I used to two illustrative data sets to test the model endpoint. The endpoint reacted and gave two predictions back:
+
+
 
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 
