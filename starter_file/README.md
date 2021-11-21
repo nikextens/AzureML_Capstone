@@ -98,7 +98,46 @@ hyperparams:  {'runId': 'HD_1221d562-19e8-481d-b55c-7d9f3abc0a7e_0', 'target': '
 When comparing the accuracy with the AutoML model, it becomes obvious that the hypertuning still needs some improvement. The poor accuracy indicates that I should not stick with regression (and focus on fine-tuning) in a next iteration but rather try a different model. Since it is a classification problem, my next pre-selection would be a random forest.
 
 ## Model Deployment
-Afterwards, I deployed the AutoML model that outperformed the other one via ACIWebservice. There, I also enabled app insights so that I could easily generate access keys to also query the model. 
+Afterwards, I deployed the AutoML model that outperformed the other one via ACIWebservice. That happened via the `deployment_config` specified as an `AciWebservice` deployment. There, I also enabled app insights (`auth_enables=True`) so that I could easily generate access keys to also query the model afterwards (see below for example). `cpu_cores` and `memory_gb` were modestly set to 1.
+
+```
+data = {"data":
+        [
+          {
+            "type": "red",
+            "fixed acidity": 7,
+            "volatile acidity": 0.27,
+            "citric acid": 0.36,
+            "residual sugar": 20.7,
+            "chlorides": 0.045,
+            "free sulfur dioxide": 45,
+            "total sulfur dioxide": 170,
+            "desnsity": 1.001,
+            "pH": 3,
+            "sulphates": 0.45,
+            "alcohol": 8.8,
+          },
+          {
+            "type": "white",
+            "fixed acidity": 7,
+            "volatile acidity": 0.27,
+            "citric acid": 0.36,
+            "residual sugar": 20.7,
+            "chlorides": 0.045,
+            "free sulfur dioxide": 45,
+            "total sulfur dioxide": 170,
+            "desnsity": 1.001,
+            "pH": 3,
+            "sulphates": 0.45,
+            "alcohol": 8.8,
+          },
+      ]
+    }
+```
+
+
+
+
 
 The following figure shows the successful deployment of the model (in SDK as well as in the endpoint section of the studio).
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/deployment_sdk.PNG)
