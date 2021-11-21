@@ -98,43 +98,13 @@ hyperparams:  {'runId': 'HD_1221d562-19e8-481d-b55c-7d9f3abc0a7e_0', 'target': '
 When comparing the accuracy with the AutoML model, it becomes obvious that the hypertuning still needs some improvement. The poor accuracy indicates that I should not stick with regression (and focus on fine-tuning) in a next iteration but rather try a different model. Since it is a classification problem, my next pre-selection would be a random forest.
 
 ## Model Deployment
-Afterwards, I deployed the AutoML model that outperformed the other one via ACIWebservice. That happened via the `deployment_config` specified as an `AciWebservice` deployment. There, I also enabled app insights (`auth_enables=True`) so that I could easily generate access keys to also query the model afterwards (see below for example). `cpu_cores` and `memory_gb` were modestly set to 1.
+Afterwards, I deployed the AutoML model that outperformed the other one via ACIWebservice. That happened via the `deployment_config` specified as an `AciWebservice` deployment. There, I also enabled app insights (`auth_enables=True`) so that I could easily generate access keys to also query the model afterwards (see below for example). `cpu_cores` and `memory_gb` were modestly set to 1 saving resources.
 
+Besides the `deployment_config`, the deployment also requires the configuation of the inference. There, I introduced the `scoring.py` script to the endpoint that has been previously been downloaded and renamed. When querying the endpoint, that script is needed to process the request. As shown in the line below, I decided to work with the scoring script that has been provided by AzureML:
 ```
-data = {"data":
-        [
-          {
-            "type": "red",
-            "fixed acidity": 7,
-            "volatile acidity": 0.27,
-            "citric acid": 0.36,
-            "residual sugar": 20.7,
-            "chlorides": 0.045,
-            "free sulfur dioxide": 45,
-            "total sulfur dioxide": 170,
-            "desnsity": 1.001,
-            "pH": 3,
-            "sulphates": 0.45,
-            "alcohol": 8.8,
-          },
-          {
-            "type": "white",
-            "fixed acidity": 7,
-            "volatile acidity": 0.27,
-            "citric acid": 0.36,
-            "residual sugar": 20.7,
-            "chlorides": 0.045,
-            "free sulfur dioxide": 45,
-            "total sulfur dioxide": 170,
-            "desnsity": 1.001,
-            "pH": 3,
-            "sulphates": 0.45,
-            "alcohol": 8.8,
-          },
-      ]
-    }
+best_automl_run.download_file('outputs/scoring_file_v_1_0_0.py','scoring.py')
 ```
-
+In the same way, I also specified the environment for the endpoint (`envFile.yml`). I also uploaded the environment [here](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/envFile.yml) for the sake of completeness.
 
 
 
