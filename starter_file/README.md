@@ -139,7 +139,7 @@ I also checked the endpoint test within the studio:
 ## Screen Recording
 Following the project's structure with two scripts classifying our wine data, I created one [screencast](https://www.youtube.com/watch?v=WEOxwvgcBFQ) to document the AutoML part and an additional [clip](https://www.youtube.com/watch?v=bvrs2v0F9mA) for the hypertuning option. 
 
-The deployment is documented [here](https://www.youtube.com/watch?v=bvrs2v0F9mA).
+The deployment is documented [here](https://www.youtube.com/watch?v=0H9drGpgmwI).
 
 Enjoy watching ;).
 
