@@ -137,7 +137,7 @@ I also checked the endpoint test within the studio:
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/deployment_test.PNG)
 
 ## Screen Recording
-Following the project's structure with two scripts classifying our wine data, I created [screencast](https://www.youtube.com/watch?v=pVbl0bvTrsM) showing the configuration and application of AzureML, afterwards a documentation of the hypertuning part and, eventually, the deployment of the best model.
+Following the project's structure with two scripts classifying our wine data, I created a [screencast](https://www.youtube.com/watch?v=pVbl0bvTrsM) showing the configuration and application of AutoML, afterwards my hypertuned pre-selected model and, eventually, the deployment of the best model.
 
 Enjoy watching ;).
 
