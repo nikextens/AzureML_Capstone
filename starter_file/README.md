@@ -39,7 +39,7 @@ Additionally, I also specified the settings for the AutoML experiment. As the ma
 
 Furthermore, I set the number of cross validations (i.e., the number of validations to perform when user validation data is not specified) to 5. `n_cross_validations` also depends on the size of the dataset meaning the number of observations. Given the size of our data set with around 6,500 samples, five cross validations seemed as a good trade-off between runtime and accuracy.
 
-Against the same background, I enabled the early stopping criterium. The logic applies when the score is not improving anymore while still preventing early stopping (default setting is also True). Since my maximum lab duration was limited, I started with enabling the `enable_early_stopping`. For the same reasons, I also provided an `experiment_timeout_hours` of one hour.
+Against the same background, I enabled the early stopping criterium. The logic applies when the score is not improving anymore while still preventing early stopping (default setting is also True). Since my maximum lab duration was limited, I started with enabling the `enable_early_stopping`. For the same reasons, I also provided an `experiment_timeout_hours` of one hour. After exceeding that maximum amount of time the experiment terminates. As mentioned above, that restriction was not binding in my case. 
 
 Since I used a compute target with more than one node, I could also increase the `max_concurrent_iterations` from 1 to 4 increasing performance/speed when running AutoML. Remaining parameters were chosen based on default recommendations.
 
