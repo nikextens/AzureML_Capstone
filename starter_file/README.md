@@ -41,7 +41,7 @@ Furthermore, I set the number of cross validations (i.e., the number of validati
 
 Against the same background, I enabled the early stopping criterium. The logic applies when the score is not improving anymore while still preventing early stopping (default setting is also True). Since my maximum lab duration was limited, I started with enabling the `enable_early_stopping`. For the same reasons, I also provided an `experiment_timeout_hours` of one hour.
 
-Since I used a compute target with more than one node, I could also increase the `max_concurrent_iterations` from 1 to 4.
+Since I used a compute target with more than one node, I could also increase the `max_concurrent_iterations` from 1 to 4 increasing performance/speed when running AutoML. Remaining parameters were chosen based on default recommendations.
 
 
 ### Results
