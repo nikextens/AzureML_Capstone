@@ -115,7 +115,7 @@ That process step took about 5 minutes. The following figure shows the successfu
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/deployment_healthy.PNG)
 Both figures also show that the service is healthy and that the model can be used.
 
-In a next step, I used to two illustrative data sets to actually test the model endpoint via SDK. To do so, I built a data set containing two potential observations: 
+In a next step, I used two illustrative data sets to actually test the model endpoint via SDK. To do so, I built a data set containing two potential observations: 
 ```
 data = {"data":
         [
