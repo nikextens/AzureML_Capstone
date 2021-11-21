@@ -106,15 +106,14 @@ best_automl_run.download_file('outputs/scoring_file_v_1_0_0.py','scoring.py')
 ```
 In the same way, I also specified the environment for the endpoint (`envFile.yml`). [Here](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/envFile.yml) you find an upload of the environment.
 
-After defining the `deployment_config` and `inference_config`, the model has been deploy with endpoint name "aci-deployment-service" (`my_best_model` includes the optimized AutoML model).
+After defining the `deployment_config` and `inference_config`, the model has been deployed with endpoint name "aci-deployment-service" (`my_best_model` includes the optimized AutoML model).
 ```
 Model.deploy(ws, "aci-deployment-service", [my_best_model], inference_config, deployment_config)
 ```
-
-The following figure shows the successful deployment of the model (in SDK as well as in the endpoint section of the studio).
+That process step took about 5 minutes. The following figure shows the successful deployment of the model (in SDK as well as in the endpoint section of the studio).
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/deployment_sdk.PNG)
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/deployment_healthy.PNG)
-Both figures also show that the service is healthy and the model can be used.
+Both figures also show that the service is healthy and that the model can be used.
 
 In a next step, I used to two illustrative data sets to test the model endpoint. 
 ```
