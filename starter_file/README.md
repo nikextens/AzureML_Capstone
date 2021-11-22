@@ -58,7 +58,7 @@ For the sake of completeness, I also exported some of the main characteristics/r
 The AutoML engine assessed 37 models and the last one brought an increase to the weighted AUC.
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/automl_model_comparison.PNG)
 
-As shown in the jupyter notebook and also screencast, the most performant model was a Stack Ensemble than completed after only 37 seconds. In the following, I exported the best model. For further information (also on the best estimator), I kindly refer to the notebook output and/or the screencast.
+As shown in the jupyter notebook and also screencast, the most performant model was a Stack Ensemble that completed after only 37 seconds. In the following, I exported the best model. For further information (also on the best estimator), I kindly refer to the notebook output and/or the screencast.
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/automl_bestmodel_studio.PNG)
 ![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/automl_bestmodel.PNG)
 
