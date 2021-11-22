@@ -71,11 +71,19 @@ For that experiment, I pre-selected a logistic regression that is a simple (and 
 ```
 early_termination_policy = BanditPolicy(slack_factor = 0.1, evaluation_interval=1, delay_evaluation=5)
 
-param_sampling = RandomParameterSampling({'--max_iter':20})
+param_sampling = RandomParameterSampling({'--C': uniform(0.001,0.5),"--max_iter":choice(10,100,1000,10000)})
 ```
-Parameter Sampler: I chose the Random Sampling as the parameter sampling method, i.e., hyperparameters are randomly selected from the search space. One of its benefits is that it the method also supports early termination of low-performance runs. Besides that it is simple and comes with a lack of bias. ML scientists often tend to work with favorite methods and hypertune parameters. By using Random Sampling, the method starts with a rather balanced 'random' view.
-
 Stopping policy: In that project, I chose the Bandit policy that is based on slack factor/slack amount and evaluation interval. In other words, the policy terminates the run when the primary metric breaches the slack of the most successfull run. Again, the method is rather simple and very efficient in those solution spaces. The underlying specification of the policy comes from an example provided by Microsoft (see [link](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters) for details). In that example, the early termination policy is applied at every interval when metrics are reported, starting at evaluation interval 5. Any run whose best metric is less than (1/(1+0.1) or 91% of the best performing run will be terminated.
+
+Parameter Sampler: I chose the Random Sampling as the parameter sampling method, i.e., hyperparameters are randomly selected from the search space. One of its benefits is that it the method also supports early termination of low-performance runs. Besides that it is simple and comes with a lack of bias. ML scientists often tend to work with favorite methods and hypertune parameters. By using Random Sampling, the method starts with a rather balanced 'random' view. 
+
+I hypertuned two parameters by including `--C` (regularization strength) and `--max_iter` (i.e., maximum number of iterations) in the configuration. With regard to regularization strength, I simulated values between 0.001 and 0.5 (uniform distribution) resulting in different penalties that usually prevent overfitting. In addition, we chose different numbers for the `max_iter` parameter from 10 to 10,000 that cover a broad range for the tuning procedure. 
+
+Given the early termination policy and parameter sampling, I could then complete the hyperdrive configuration and submit the experiment afterwards:
+```
+hyperdrive_run_config = HyperDriveConfig(estimator=estimator, hyperparameter_sampling=param_sampling, policy=early_termination_policy, max_concurrent_runs=4, primary_metric_name='Accuracy',max_total_runs=30,primary_metric_goal=PrimaryMetricGoal.MAXIMIZE)
+```
+For the underlying estimator, I added the entry script [train.py](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/train.py).
 
 ### Results
 The hyperparameter tuning completed successfully after 18 minutes. 
