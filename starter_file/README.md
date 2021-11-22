@@ -104,7 +104,7 @@ hyperparams:  {'runId': 'HD_848aab14-9147-496b-b04f-00048405bfef_2', 'target': '
 When comparing the accuracy with the AutoML model, it becomes obvious that the hypertuning still needs some improvement. The poor accuracy indicates that I should not stick with regression (and focus on fine-tuning) in a next iteration but rather try a different model (and maybe also primary metric). Since it is a classification problem, my next pre-selection would be a random forest.
 
 Despite its weak performance, I still registered the model and provided some properties as accuracy and the hypertuned parameters:
-![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/hypertune_model_registration.PNG)
+![plot](https://github.com/nikextens/AzureML_Capstone/blob/master/starter_file/Screenshots/hypertune_model_registration_SDK.PNG)
 
 ## Model Deployment
 Afterwards, I deployed the AutoML model via ACIWebservice that outperformed the hypertuned pre-selected model. That happened via the `deployment_config` specified as an `AciWebservice` deployment. There, I also enabled app insights (`auth_enables=True`) so that I could easily generate access keys to also query the model afterwards (see example below). `cpu_cores` and `memory_gb` were modestly set to 1 saving resources.
